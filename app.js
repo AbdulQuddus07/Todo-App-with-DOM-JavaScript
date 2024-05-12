@@ -6,33 +6,54 @@ function add() {
     alert("Please enter a task");
   } else {
     // Created list
-    let newElementli = document.createElement("li");
+    let liElement = document.createElement("li");
     // This code create paragraph
     let newElementP = document.createElement("p");
     // inside paragraph getting the value of inputs
     newElementP.innerHTML = inputs.value;
     newElementP.style.background = "none";
     // this code will add paragraph inside list
-    newElementli.appendChild(newElementP);
+    liElement.appendChild(newElementP);
+
+
 
     // Created editIcon
-    let editbtn = document.createElement("icon");
-    editbtn.innerHTML = '<i class="fa-solid fa-pen-to-square">';
-    
-    newElementli.appendChild(editbtn);
+    let editbtn = document.createElement("icons");
+    editbtn.classList.add("fa-solid", "fa-pen-to-square", "edit");
+    liElement.appendChild(editbtn);
+    editbtn.setAttribute("onclick", "updateTask(this)");
+
+
+
     // Created deleteIcon
     let deletebtn = document.createElement("icon");
+    deletebtn.classList.add("fa-solid", "fa-trash", "delete");
+    liElement.appendChild(deletebtn);
+    deletebtn.setAttribute("onclick", "deleteTask(this)");
 
-    deletebtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
-    newElementli.appendChild(deletebtn);
-    deletebtn.classList.add("deletebtn");
- // finaally adding listItem in todoList:
-    todoList.appendChild(newElementli);
+
+    // finaally adding listItem in todoList:
+    todoList.appendChild(liElement);
     inputs.value = "";
-    // newElementli.innerHTML = `${inputs.value} <i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i>`;
   }
 }
-let deleteTask = (deletebtn) =>{
-    
+
+
+// created deleteFunction to delete todolist target element
+function deleteTask(e) {
+    e.parentNode.remove()
 }
-todoList.addEventListener('click',deleteTask);
+
+
+// created updateFunction to update todolist target element
+function updateTask(e) {
+    let currentElementText = e.previousElementSibling.textContent;
+    let currentInput = document.createElement("input");
+    currentInput.type = "text";
+    currentInput.className = 'input';
+    e.value = currentElementText;
+    e.parentNode.replaceChild(currentInput,e.previousElementSibling,)
+    e.style.margin = "20px"
+     
+}
+

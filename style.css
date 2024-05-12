@@ -49,14 +49,15 @@ input {
   flex: 1;
   padding: 15px;
   border: none;
+  border-radius: 5px;
   outline-color: #5d39a9;
   background: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: 0px 0px 8px #d5d1d1;
 }
 .add-button {
   max-width: 220px;
   max-height: 50px;
-  padding: 15px;
+  padding: 14px;
   font-size: 15px;
   font-weight: bold;
   font-family: var(--font-poetson);
@@ -75,7 +76,7 @@ li {
   background: #fff;
   max-width: 430px;
   margin: 12px 25px 12px 25px;
-  padding: 12px;
+  padding: 10px;
   border: none;
   border-radius: 5px;
   display: flex;

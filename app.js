@@ -1,5 +1,5 @@
 let inputs = document.getElementById("inputbox");
-let listText = document.getElementById("list-text");
+let todoList = document.getElementById("list-text");
 function add() {
   // if input is equal to null means no text then show alert
   if (inputs.value == "") {
@@ -18,14 +18,21 @@ function add() {
     // Created editIcon
     let editbtn = document.createElement("icon");
     editbtn.innerHTML = '<i class="fa-solid fa-pen-to-square">';
+    
     newElementli.appendChild(editbtn);
     // Created deleteIcon
     let deletebtn = document.createElement("icon");
+
     deletebtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
     newElementli.appendChild(deletebtn);
+    deletebtn.classList.add("deletebtn");
  // finaally adding listItem in todoList:
-    listText.appendChild(newElementli);
+    todoList.appendChild(newElementli);
     inputs.value = "";
     // newElementli.innerHTML = `${inputs.value} <i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i>`;
   }
 }
+let deleteTask = (deletebtn) =>{
+    
+}
+todoList.addEventListener('click',deleteTask);

@@ -54,6 +54,8 @@ input {
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 .add-button {
+  max-width: 220px;
+  max-height: 50px;
   padding: 15px;
   font-size: 15px;
   font-weight: bold;
@@ -71,7 +73,7 @@ ul {
 }
 li {
   background: #fff;
-  width: 430px;
+  max-width: 430px;
   margin: 12px 25px 12px 25px;
   padding: 12px;
   border: none;

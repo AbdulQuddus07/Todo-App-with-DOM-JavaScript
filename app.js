@@ -1,5 +1,6 @@
 let inputs = document.getElementById("inputbox");
 let todoList = document.getElementById("list-text");
+
 function add() {
   // if input is equal to null means no text then show alert
   if (inputs.value == "") {

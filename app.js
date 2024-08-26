@@ -16,15 +16,11 @@ function add() {
     // this code will add paragraph inside list
     liElement.appendChild(newElementP);
 
-
-
     // Created editIcon
     let editbtn = document.createElement("icons");
     editbtn.classList.add("fa-solid", "fa-pen-to-square", "edit");
     liElement.appendChild(editbtn);
     editbtn.setAttribute("onclick", "updateTask(this)");
-
-
 
     // Created deleteIcon
     let deletebtn = document.createElement("icon");
@@ -32,29 +28,27 @@ function add() {
     liElement.appendChild(deletebtn);
     deletebtn.setAttribute("onclick", "deleteTask(this)");
 
-
     // finaally adding listItem in todoList:
     todoList.appendChild(liElement);
     inputs.value = "";
   }
 }
 
-
 // created deleteFunction to delete todolist target element
 function deleteTask(e) {
-    e.parentNode.remove()
+  e.parentNode.remove();
 }
-
 
 // created updateFunction to update todolist target element
 function updateTask(e) {
-    let currentElementText = e.previousElementSibling.textContent;
-    let currentInput = document.createElement("input");
-    currentInput.type = "text";
-    currentInput.className = 'input';
-    e.value = currentElementText;
-    e.parentNode.replaceChild(currentInput,e.previousElementSibling,)
-    e.style.margin = "20px"
-     
+  let prviousValue = e.previousElementSibling.innerText;
+  console.log(prviousValue);
+  let currentInput = document.createElement("input");
+  currentInput.type = "text";
+  currentInput.className = "input";
+  // e.value = currentElementText;
+  let updateValue = prompt("update your value", prviousValue);
+  e.previousElementSibling.innerText = updateValue;
+   //e.previousElementSibling.replaceChild(currentInput,prviousValue)
+  // e.style.margin = "20px"
 }
-
